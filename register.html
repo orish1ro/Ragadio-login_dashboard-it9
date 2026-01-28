@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Register</title>
+    
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f9; 
+            text-align: center; 
+            padding: 20px; 
+        }
+        
+        .container { 
+            background-color: white; 
+            width: 650px; 
+            margin: 50px auto; 
+            padding: 30px;
+        }
+        
+        input { 
+            width: 90%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #000000;
+        }
+
+        label {
+            float: left; 
+            font-weight: bold;
+            margin-left: 22px; 
+        }
+        
+        button { 
+            width: 94%; 
+            padding: 10px; 
+            background-color: lch(53.56% 66.56 282.25); 
+            color: rgb(255, 255, 255); 
+            font-size: 15px; 
+            border: none; 
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .login-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .login-link a {
+            color: lch(53.56% 66.56 282.25); 
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+
+    <script>
+        function registerUser(e) {
+            e.preventDefault();
+            
+            var pass = document.getElementById("password").value;
+            var confirmPass = document.getElementById("confirm_password").value;
+
+            if (pass !== confirmPass) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            alert("Registration Successful!");
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Register New Account</h2>
+        
+        <form onsubmit="registerUser(event)">
+            
+            <label>Full Name</label><br>
+            <input type="text" id="fullname" required><br><br>
+
+            <label>Username</label><br>
+            <input type="text" id="username" required><br><br>
+
+            <label>Email</label><br>
+            <input type="email" id="email" required><br><br>
+
+            <label>Password</label><br>
+            <input type="password" id="password" required><br><br>
+
+            <label>Confirm Password</label><br>
+            <input type="password" id="confirm_password" required><br><br>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p class="login-link">
+            Already have an account? <a href="login.html">Login here</a>
+        </p>
+    </div>
+
+</body>
+</html>
